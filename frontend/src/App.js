@@ -19,10 +19,9 @@ function App() {
   const [user, setUser] = useState({});
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-
   useEffect(() => {
     (async () => {
-      const USER_URL = "http://localhost:8000/api/user";
+      const USER_URL = "https://codedot-backend.vercel.app/api/user";
       const res = await axios.get(USER_URL, {
         headers: { Authorization: token },
       });
@@ -32,8 +31,7 @@ function App() {
       } else {
         setIsLoggedIn(false);
       }
-    }
-    )();
+    })();
   }, [token]);
 
   return (

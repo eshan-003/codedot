@@ -11,13 +11,13 @@ import Cookies from "js-cookie";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { token , setToken, setIsLoggedIn } = useContext(UserContext);
+  const { token, setToken, setIsLoggedIn } = useContext(UserContext);
   const [loginError, setLoginError] = useState("");
   const [loader, setLoader] = useState(false);
 
-  useEffect(()=>{
-    if(token) navigate('/')
-  },[])
+  useEffect(() => {
+    if (token) navigate("/");
+  }, []);
 
   const schema = yup.object({
     email: yup.string().email().required("Email is required"),
@@ -35,7 +35,7 @@ const Login = () => {
   const onSubmit = async (data) => {
     try {
       setLoader(true);
-      const LOGIN_URL = `http://localhost:8000/api/login`;
+      const LOGIN_URL = `https://codedot-backend.vercel.app/api/login`;
       const res = await axios.post(LOGIN_URL, data);
       if (res.status === 200) {
         let token = res.data;
