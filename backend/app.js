@@ -24,8 +24,9 @@ const editProblemRoute = require("./routes/adminRoutes/editProblemRoute");
 // Allow cross-origin requests from http://localhost:3000 with specific headers and methods
 app.use(
   cors({
-    origin: "https://code-dot.vercel.app",
-    methods: "*",
+    origin: ["https://code-dot.vercel.app"],
+    methods: ["POST", "GET", "PUT", "DELETE"],
+    credentials: true,
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
