@@ -37,7 +37,9 @@ require("./db/conn");
 app.use(express.json());
 // Parse URL-encoded request bodies
 app.use(express.urlencoded({ extended: false }));
-
+app.get("/",(req,res)=>{
+  res.send("Hello World")
+})
 // Use user routes
 app.use("/api/", getUserRoute);
 app.use("/api/", signupRoute);
