@@ -27,7 +27,6 @@ app.use(
     origin: ["https://code-dot.vercel.app"],
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true,
-    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
