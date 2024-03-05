@@ -47,7 +47,7 @@ const ShowProblem = ({ user }) => {
     (async () => {
       try {
         setLoader(true);
-        const PROBLEM_URL = `https://codedot-backend.vercel.app/api/problem/${problemSlug}`;
+        const PROBLEM_URL = `https://codedot-backend.onrender.com/api/problem/${problemSlug}`;
         const res = await axios.get(PROBLEM_URL, {
           headers: { Authorization: token },
         });
@@ -71,7 +71,7 @@ const ShowProblem = ({ user }) => {
       } else if (lang === "python") {
         language = "py";
       }
-      const RUN_CODE_URL = `https://codedot-backend.vercel.app/api/run`;
+      const RUN_CODE_URL = `https://codedot-backend.onrender.com/api/run`;
       // console.log(input);
       const res = await axios.post(
         RUN_CODE_URL,
@@ -97,7 +97,7 @@ const ShowProblem = ({ user }) => {
       } else if (lang === "python") {
         language = "py";
       }
-      const CHECK_CODE_URL = `https://codedot-backend.vercel.app/api/check/${problemSlug}`;
+      const CHECK_CODE_URL = `https://codedot-backend.onrender.com/api/check/${problemSlug}`;
       const res = await axios.post(
         CHECK_CODE_URL,
         { lang: language, code, email: user.email },

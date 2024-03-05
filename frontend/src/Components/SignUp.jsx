@@ -36,7 +36,7 @@ const SignUp = () => {
     try {
       setLoader(true);
       delete data["cpassword"];
-      const SIGNUP_URL = "https://codedot-backend.vercel.app/api/signup";
+      const SIGNUP_URL = "https://codedot-backend.onrender.com/api/signup";
       const successMessage = await axios.post(SIGNUP_URL, data);
       if (successMessage.data === "success") {
         navigate("/login");

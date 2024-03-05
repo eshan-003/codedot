@@ -48,7 +48,7 @@ const AddProblem = () => {
     try {
       setLoader(true);
       const ADD_PROBLEM_URL =
-        "https://codedot-backend.vercel.app/admin/problem";
+        "https://codedot-backend.onrender.com/admin/problem";
       const successMessage = await axios.post(ADD_PROBLEM_URL, data, {
         headers: { Authorization: token },
       });
