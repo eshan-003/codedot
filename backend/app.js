@@ -24,7 +24,7 @@ const editProblemRoute = require("./routes/adminRoutes/editProblemRoute");
 // Allow cross-origin requests from http://localhost:3000 with specific headers and methods
 app.use(
   cors({
-    origin: ["https://code-dot.vercel.app"],
+    origin: ["https://localhost:3000"],
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true,
     allowedHeaders: ["Content-Type", "Authorization"],
@@ -38,9 +38,9 @@ require("./db/conn");
 app.use(express.json());
 // Parse URL-encoded request bodies
 app.use(express.urlencoded({ extended: false }));
-app.get("/",(req,res)=>{
-  res.send("Hello World")
-})
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
 // Use user routes
 app.use("/api/", getUserRoute);
 app.use("/api/", signupRoute);
