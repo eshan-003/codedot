@@ -47,7 +47,7 @@ const LeaderBoard = () => {
     (async () => {
       try {
         setLoader(true);
-        const GET_LEADER_BOARD = `https://codedot-backend.onrender.com/api/leader-board`;
+        const GET_LEADER_BOARD = `https://localhost:8000/api/leader-board`;
         const res = await axios.get(GET_LEADER_BOARD, {
           headers: { Authorization: token },
         });

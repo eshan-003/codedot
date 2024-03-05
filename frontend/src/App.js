@@ -21,7 +21,7 @@ function App() {
 
   useEffect(() => {
     (async () => {
-      const USER_URL = "https://codedot-backend.onrender.com/api/user";
+      const USER_URL = "https://localhost:8000/api/user";
       const res = await axios.get(USER_URL, {
         headers: { Authorization: token },
       });

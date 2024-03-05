@@ -47,8 +47,7 @@ const AddProblem = () => {
     event.preventDefault();
     try {
       setLoader(true);
-      const ADD_PROBLEM_URL =
-        "https://codedot-backend.onrender.com/admin/problem";
+      const ADD_PROBLEM_URL = "https://localhost:8000/admin/problem";
       const successMessage = await axios.post(ADD_PROBLEM_URL, data, {
         headers: { Authorization: token },
       });

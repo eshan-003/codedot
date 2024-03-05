@@ -35,7 +35,7 @@ const Login = () => {
   const onSubmit = async (data) => {
     try {
       setLoader(true);
-      const LOGIN_URL = `https://codedot-backend.onrender.com/api/login`;
+      const LOGIN_URL = `https://localhost:8000/api/login`;
       const res = await axios.post(LOGIN_URL, data);
       if (res.status === 200) {
         let token = res.data;
